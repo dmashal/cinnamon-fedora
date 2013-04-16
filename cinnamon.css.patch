@@ -1,0 +1,56 @@
+--- a/data/theme/cinnamon.css
++++ b/data/theme/cinnamon.css
+@@ -55,7 +55,7 @@
+ 	background-gradient-start: rgba(254,245,198,0.9);
+ 	background-gradient-direction: vertical;
+ 	color: #000000;
+-	font-size: 8.5pt;
++	font-size: 1em;
+ 	font-weight: normal;
+ 	text-align: center;
+ }
+@@ -217,7 +217,7 @@
+ #panel {
+ 	color: #ffffff;
+ 	background-color: #555555;
+-	font-size: 8.5pt;
++	font-size: 1em;
+ 	font-weight: normal;
+ 	height: 25px;
+ }
+@@ -428,7 +428,7 @@
+ 	border-radius: 4px;
+ 	padding: 3px;
+ 	border: 1px rgba(0,0,0,0);
+-	font-size: 7.5pt;
++	font-size: 1em;
+ 	color: white;
+ 	transition-duration: 100;
+ 	text-align: center;
+@@ -563,7 +563,7 @@
+ }
+ .calendar-month-label {
+ 	color: #cccccc;
+-	font-size: 7.5pt;
++	font-size: 1em;
+ 	padding-bottom: 8px;
+ 	padding-top: 8px;
+ 	font-weight: bold;
+@@ -605,7 +605,7 @@
+ 	font-weight: bold;
+ }
+ .calendar-day-base {
+-	font-size: 7.5pt;
++	font-size: 1em;
+ 	text-align: center;
+ 	width: 2.4em;
+ 	height: 2.4em;
+@@ -673,7 +673,7 @@
+  * Notifications
+  * ===================================================================*/
+ #notification {
+-	font-size: 8.5pt;
++	font-size: 1em;
+ 	border-radius: 8px 8px 8px 8px;
+ 	border: 2px solid #a5a5a5;
+ 	background-gradient-direction: vertical;

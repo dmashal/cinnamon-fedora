@@ -1,0 +1,39 @@
+--- a/files/usr/share/cinnamon/applets/menu@cinnamon.org/applet.js
++++ b/files/usr/share/cinnamon/applets/menu@cinnamon.org/applet.js
+@@ -27,6 +27,7 @@
+ const MAX_RECENT_FILES = 20;
+ 
+ const USER_DESKTOP_PATH = FileUtils.getUserDesktopDir();
++const MENU_EDIT_OK = FileUtils.testMenuEditDeps();
+ 
+ 
+ let appsys = Cinnamon.AppSystem.get_default();
+@@ -746,8 +747,11 @@
+             Main.placesManager.connect('places-updated', Lang.bind(this, this._refreshApps));
+             this.RecentManager.connect('changed', Lang.bind(this, this._refreshApps));
+ 
+-            this.edit_menu_item = new Applet.MenuItem(_("Edit menu"), Gtk.STOCK_EDIT, Lang.bind(this, this._launch_editor));
+-            this._applet_context_menu.addMenuItem(this.edit_menu_item);
++            if ( MENU_EDIT_OK ) {
++              this.edit_menu_item = new Applet.MenuItem(_("Edit menu"), Gtk.STOCK_EDIT, Lang.bind(this, this._launch_editor));
++              this._applet_context_menu.addMenuItem(this.edit_menu_item);
++            }
++
+             let settings_menu_item = new Applet.MenuItem(_("Menu settings"), null, function() {
+                 Util.spawnCommandLine("cinnamon-settings menu");
+             });
+--- a/js/misc/fileUtils.js
++++ b/js/misc/fileUtils.js
+@@ -45,6 +45,12 @@
+     deleteGFile(dir);
+ }
+ 
++
++function testMenuEditDeps() {
++   let MenuEditReq = Gio.file_new_for_path("/usr/bin/cinnamon-menu-editor");
++   return MenuEditReq.query_exists(null);
++}
++
+ function getUserDesktopDir() {
+     // Didn't find a function returning the user desktop dir, so parsing the user-dirs.dirs file to get it
+     let userdirsFile = Gio.file_new_for_path(GLib.get_home_dir()+"/.config/user-dirs.dirs");

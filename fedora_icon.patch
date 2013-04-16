@@ -1,0 +1,20 @@
+--- a/data/org.cinnamon.gschema.xml.in
++++ b/data/org.cinnamon.gschema.xml.in
+@@ -236,7 +236,7 @@
+     </key>
+     
+     <key type="s" name="menu-text">
+-      <default>"Menu"</default>
++      <default>"  Menu"</default>
+       <_summary>Text for the menu</_summary>
+       <_description>
+ 	    The text shown in the Menu label.
+@@ -244,7 +244,7 @@
+     </key>
+     
+     <key type="s" name="menu-icon">
+-      <default>"/usr/share/cinnamon/theme/menu.png"</default>
++      <default>"/usr/share/icons/Fedora/scalable/places/start-here.svg"</default>
+       <_summary>Icon for the menu</_summary>
+       <_description>
+ 	    The icon shown in the Menu button.
